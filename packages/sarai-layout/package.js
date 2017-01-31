@@ -67,7 +67,7 @@ Package.onUse(function(api) {
   api.addAssets([
     "public/footer-icons/call.png",
     "public/footer-icons/mail.png",
-    "public/footer-icons/location.png"
+    "public/footer-icons/location.png",
     ], "client")
 
   api.export([

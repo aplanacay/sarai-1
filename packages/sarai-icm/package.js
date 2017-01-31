@@ -109,6 +109,10 @@ Package.onUse(function(api) {
     "client/components/sarai-icm-corn/includes/corn-pages/farm-mechanization/index.html",
     "client/components/sarai-icm-corn/includes/corn-pages/farm-mechanization/route.js",
 
+    "client/components/sarai-icm-corn/includes/corn-pages/food-products/index.js",
+    "client/components/sarai-icm-corn/includes/corn-pages/food-products/index.html",
+    "client/components/sarai-icm-corn/includes/corn-pages/food-products/route.js",
+
     // ***************** Banana Pages ***************** //
     "client/components/sarai-icm-banana/includes/banana-pages/uri-ng-pananim/index.js",
     "client/components/sarai-icm-banana/includes/banana-pages/uri-ng-pananim/index.html",
@@ -233,6 +237,8 @@ Package.onUse(function(api) {
     "public/images/corn/icons/pest-1.jpg",
     "public/images/corn/icons/planting_calendar-1.png",
     "public/images/corn/icons/rainfall_distribution-1.jpg",
+    "public/images/corn/icons/suitability_maps-1.png",
+    "public/images/corn/icons/food_products-1.png",
 
     "public/images/corn/corn-nutrient-expert.png",
 

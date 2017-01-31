@@ -1,30 +1,20 @@
 <template name="CornArticle">
 	{{#if isEnabled}}
+  
 	<div class="mdl-grid" style="margin-left: 10px;">
-      	<div class="mdl-cell mdl-cell--3-col">
-    	<a href="/icm-corn-land-prep">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--1-offset-desktop">
+        <h2>
+          Cultural Management Practices
+        </h2>
+      </div>
+      <div class="mdl-cell mdl-cell--3-col">
+    	 <a href="/icm-corn-land-prep">
           <center>
           <img src="/packages/sarai_sarai-icm/public/images/corn/icons/land_preparation-1.png" alt="" border="0"/>
           <br/>LAND <br/> PREPARATION
           </center>
         </a>
-      	</div>
-      	<div class="mdl-cell mdl-cell--3-col">
-        <!-- <a href=""> -->
-          <center>
-          <img src="/packages/sarai_sarai-icm/public/images/corn/icons/planting_calendar-1.png" alt="" border="0"/>
-          <br/>PLANTING <br/> CALENDAR
-          </center>
-        <!-- </a> -->
-      	</div>
-      	<div class="mdl-cell mdl-cell--3-col">
-        <!-- <a href=""> -->
-          <center>
-          <img src="/packages/sarai_sarai-icm/public/images/corn/icons/rainfall_distribution-1.jpg" alt="" border="0"/>
-          <br/>RAINFALL <br/> DISTRIBUTION
-          </center>
-        <!-- </a> -->
-      	</div>
+      </div>
      	<div class="mdl-cell mdl-cell--3-col">
         <a href="/icm-corn-pests-and-diseases">
           <center>
@@ -50,14 +40,6 @@
           </center>
         </a>
       	</div>
-      	<div class="mdl-cell mdl-cell--3-col">
-        <a href="/icm-corn-processing">
-          <center>
-          <img src="/packages/sarai_sarai-icm/public/images/corn/icons/corn_processing-1.png" alt="" border="0"/>
-          <br/>PROCESSING
-          </center>
-        </a>
-      	</div>
      	<div class="mdl-cell mdl-cell--3-col">
         <a href="/icm-corn-farm-mechanization">
           <center>
@@ -66,7 +48,72 @@
           </center>
         </a>
       	</div>
+        <div class="mdl-cell mdl-cell--3-col">
+        <!-- <a href=""> -->
+          <center>
+          <img src="/packages/sarai_sarai-icm/public/images/corn/icons/planting_calendar-1.png" alt="" border="0"/>
+          <br/>PLANTING <br/> CALENDAR
+          </center>
+        <!-- </a> -->
+        </div>
+        <div class="mdl-cell mdl-cell--3-col">
+        <!-- <a href=""> -->
+          <center>
+          <img src="/packages/sarai_sarai-icm/public/images/corn/icons/rainfall_distribution-1.jpg" alt="" border="0"/>
+          <br/>RAINFALL <br/> DISTRIBUTION
+          </center>
+        <!-- </a> -->
+        </div>
 	</div>
+  
+  <div class="mdl-grid" style="margin-left: 10px;">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--1-offset-desktop">
+        <h2>
+          Postharvest and Processing
+        </h2>
+      </div>
+
+        <div class="mdl-cell mdl-cell--3-col">
+        <a href="/icm-corn-processing">
+          <center>
+          <img src="/packages/sarai_sarai-icm/public/images/corn/icons/corn_processing-1.png" alt="" border="0"/>
+          <br/>PROCESSING
+          </center>
+        </a>
+        </div>
+  </div>
+  
+  <div class="mdl-grid" style="margin-left: 10px;">
+       <div class="mdl-cell mdl-cell--12-col mdl-cell--1-offset-desktop">
+        <h2>
+          Monitoring and Forecasting
+        </h2>
+      </div>
+        <div class="mdl-cell mdl-cell--3-col">
+      <a href="http://159.203.253.31/suitability-maps/corn-dry">
+          <center>
+          <img src="/packages/sarai_sarai-icm/public/images/corn/icons/suitability_maps-1.png" alt="suitability maps" border="0"/>
+          <br/>SUITABILITY <br/> MAPS
+          </center>
+        </a>
+        </div>
+  </div>
+  
+  <div class="mdl-grid" style="margin-left: 10px;">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--1-offset-desktop">
+        <h2>
+          Food Products
+        </h2>
+      </div>
+        <div class="mdl-cell mdl-cell--3-col">
+      <a href="/icm-corn-food-products">
+          <center>
+          <img src="/packages/sarai_sarai-icm/public/images/corn/icons/food_products-1.png" alt="" border="0"/>
+          <br/>FOOD <br/> PRODUCTS
+          </center>
+        </a>
+        </div>
+  </div>
 
 	<div class="mdl-grid" style="margin-left: 10px;">
 		<div id="corn-article" class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--1-offset-desktop">
@@ -74,6 +121,18 @@
 				{{corn_article.title}}
 			</h2>
 			{{{corn_article.content}}}
+
+      <h2>
+        Useful Links:
+      </h2>
+        <ol>
+          <li>
+            <a href="https://drive.google.com/file/d/0B6qPjZ40HrlaRTZUT1ZsX1JGTTA/view?usp=sharing" >Training Toolkit for Maize</a>
+          </li>
+          <li>
+            <a href="http://159.203.253.31/suitability-maps/corn-dry">Suitability Map for Corn</a>
+          </li>
+        </ol>
 			<!-- <img class="service-icon-img" src="/packages/sarai_sarai-icm/public/images/corn/corn-nutrient-expert.png" alt="Corn Nutrient Expert" />
 			<h2>
 				Corn Nutrient Expert
