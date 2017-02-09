@@ -1,5 +1,10 @@
 <template name="CoffeeArticle">
 	<div class="mdl-grid" style="margin-left: 10px;">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--1-offset-desktop">
+        <h2>
+          Cultural Management Practices
+        </h2>
+      </div>
       	<div class="mdl-cell mdl-cell--3-col">
     	   <a href="/icm-coffee-industry">
           <center>
@@ -57,15 +62,39 @@
           </center>
         </a>
       	</div>
-     	<div class="mdl-cell mdl-cell--3-col">
+	</div>
+
+  <div class="mdl-grid" style="margin-left: 10px;">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--1-offset-desktop">
+        <h2>
+          Postharvest and Processing
+        </h2>
+      </div>
+      <div class="mdl-cell mdl-cell--3-col">
         <a href="/icm-coffee-processing">
           <center>
           <img src="/packages/sarai_sarai-icm/public/images/coffee/icons/processing.png" alt="" border="0"/>
           <br/>PROCESSING
           </center>
         </a>
-      	</div>
-	</div>
+        </div>
+  </div>
+
+  <div class="mdl-grid" style="margin-left: 10px;">
+       <div class="mdl-cell mdl-cell--12-col mdl-cell--1-offset-desktop">
+        <h2>
+          Monitoring and Forecasting
+        </h2>
+      </div>
+        <div class="mdl-cell mdl-cell--3-col">
+      <a href="http://159.203.253.31/suitability-maps/corn-dry">
+          <center>
+          <img src="/packages/sarai_sarai-icm/public/images/corn/icons/suitability_maps-1.png" alt="suitability maps" border="0"/>
+          <br/>SUITABILITY <br/> MAPS
+          </center>
+        </a>
+        </div>
+  </div>
 
 
 	{{#if isEnabled}}
@@ -75,6 +104,18 @@
 				{{coffee_article.title}}
 			</h2>
 			{{{coffee_article.content}}}
+
+      <h2>
+        Useful Links:
+      </h2>
+        <ol>
+          <li>
+            <a href="https://drive.google.com/open?id=0B6qPjZ40Hrlaekt1eVJzbkFWazQ" >Coffee ICM</a>
+          </li>
+          <li>
+            <a href="http://159.203.253.31/suitability-maps/coffee-arabica">Suitability Map for Coffee</a>
+          </li>
+        </ol>
 		</div>
 
 		<div class="col-sm-8 col-md-8 col-xs-12">

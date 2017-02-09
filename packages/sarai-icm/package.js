@@ -113,6 +113,23 @@ Package.onUse(function(api) {
     "client/components/sarai-icm-corn/includes/corn-pages/food-products/index.html",
     "client/components/sarai-icm-corn/includes/corn-pages/food-products/route.js",
 
+    "client/components/sarai-icm-corn/includes/corn-pages/grain-quality/index.js",
+    "client/components/sarai-icm-corn/includes/corn-pages/grain-quality/index.html",
+    "client/components/sarai-icm-corn/includes/corn-pages/grain-quality/route.js",
+
+    "client/components/sarai-icm-corn/includes/corn-pages/corn-mill/index.js",
+    "client/components/sarai-icm-corn/includes/corn-pages/corn-mill/index.html",
+    "client/components/sarai-icm-corn/includes/corn-pages/corn-mill/route.js",
+
+    // ***************** Coconut Pages ***************** //
+    "client/components/sarai-icm-coconut/includes/coconut-pages/pollination/index.js",
+    "client/components/sarai-icm-coconut/includes/coconut-pages/pollination/index.html",
+    "client/components/sarai-icm-coconut/includes/coconut-pages/pollination/route.js",
+
+    "client/components/sarai-icm-coconut/includes/coconut-pages/nut-processing/index.js",
+    "client/components/sarai-icm-coconut/includes/coconut-pages/nut-processing/index.html",
+    "client/components/sarai-icm-coconut/includes/coconut-pages/nut-processing/route.js",
+
     // ***************** Banana Pages ***************** //
     "client/components/sarai-icm-banana/includes/banana-pages/uri-ng-pananim/index.js",
     "client/components/sarai-icm-banana/includes/banana-pages/uri-ng-pananim/index.html",
@@ -200,6 +217,14 @@ Package.onUse(function(api) {
     "client/components/sarai-icm-cacao/includes/cacao-pages/processing/index.html",
     "client/components/sarai-icm-cacao/includes/cacao-pages/processing/route.js",
 
+    "client/components/sarai-icm-cacao/includes/cacao-pages/varieties/index.js",
+    "client/components/sarai-icm-cacao/includes/cacao-pages/varieties/index.html",
+    "client/components/sarai-icm-cacao/includes/cacao-pages/varieties/route.js",
+
+    "client/components/sarai-icm-cacao/includes/cacao-pages/preparation/index.js",
+    "client/components/sarai-icm-cacao/includes/cacao-pages/preparation/index.html",
+    "client/components/sarai-icm-cacao/includes/cacao-pages/preparation/route.js",
+
     // ********************************************* //
     "client/components/sarai-icm-corn/includes/article/corn-slider.less"
 
@@ -239,6 +264,11 @@ Package.onUse(function(api) {
     "public/images/corn/icons/rainfall_distribution-1.jpg",
     "public/images/corn/icons/suitability_maps-1.png",
     "public/images/corn/icons/food_products-1.png",
+    "public/images/corn/icons/grain_quality-1.png",
+    "public/images/corn/icons/corn_mill-1.png",
+
+    "public/images/coconut/icons/pollination-1.png",
+    "public/images/coconut/icons/nut_processing-1.png",
 
     "public/images/corn/corn-nutrient-expert.png",
 
