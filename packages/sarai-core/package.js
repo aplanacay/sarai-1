@@ -51,6 +51,7 @@ Package.onUse(function(api) {
     // "sarai:sarai-satellite-ndvi"
     "sarai:sarai-icm",
     "sarai:sarai-icm-data",
+    "sarai:sarai-fertility-map",
     ]
 
   api.use(packages);
