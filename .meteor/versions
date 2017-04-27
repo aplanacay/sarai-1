@@ -77,6 +77,7 @@ less@2.5.1
 livedata@1.0.15
 localstorage@1.0.5
 logging@1.0.8
+maazalik:highcharts@0.4.0
 matteodem:easy-search@1.6.4
 meteor@1.1.10
 meteor-base@1.0.1
@@ -126,6 +127,7 @@ sarai:sarai-clinic-data@0.0.1
 sarai:sarai-cms@0.0.1
 sarai:sarai-cms-data@0.0.1
 sarai:sarai-core@0.0.1
+sarai:sarai-fertility-map@0.0.1
 sarai:sarai-icm@0.0.1
 sarai:sarai-icm-data@0.0.1
 sarai:sarai-layout@0.0.1
