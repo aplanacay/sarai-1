@@ -55,7 +55,9 @@ Package.onUse(function(api) {
     "sarai:sarai-suitability-gallery-data",
     "sarai:sarai-rainfall-distribution",
     "sarai:sarai-rainfall-distribution-data",
-    "sarai:sarai-advisories"
+    "sarai:sarai-advisories",
+    "sarai:sarai-fertility-map",
+    "sarai:sarai-fertility-data",
     ]
 
   api.use(packages);

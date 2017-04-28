@@ -1,0 +1,1 @@
+FertilityData = new Mongo.Collection('fertility-data')

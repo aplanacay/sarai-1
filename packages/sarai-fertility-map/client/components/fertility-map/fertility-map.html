@@ -1,0 +1,73 @@
+<template name="FertilityMap">
+	<div class="mdl-grid">
+	    <div class="mdl-cell mdl-cell--3-col-desktop">
+	      <div id="weather-map-v2"></div>
+	    </div>
+	    <div class="mdl-cell mdl-cell--9-col-desktop">
+	      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+	        <div id="forecast" class="btn-group" role="group">
+	          <button type="button" class="btn btn-default">
+	            Soil Fertility Status
+	          </button>
+	        </div>	       
+	      </div>
+
+	      <div id="meteogram-container">
+
+	      </div>
+	    </div>
+
+	    <div class="mdl-cell mdl-cell--12-col-desktop">
+	      <h3>Soil Fertility Table</h3>
+	      <div class="table-responsive">
+	        <table class="table table-striped">
+	          <thead>
+	            <tr>
+	              <th>Site</th>
+	              <th>N (ppm)</th>
+	              <th>P (cmol)</th>
+	              <th>K</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	            {{#each site in sites}}
+	              <tr>
+	                <td>{{site.district}}</td>
+	                <td>{{site.N}}</td>
+	                <td>{{site.P}}</td>
+	                <td>{{site.K}}</td>
+	              </tr>
+	            {{/each}}
+	          </tbody>
+	        </table>
+	      </div>
+	    </div>
+
+	    <div class="mdl-cell mdl-cell--12-col-desktop year-meteogram">
+
+	    </div>
+    </div>	
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</template>
