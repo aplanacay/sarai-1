@@ -1,5 +1,5 @@
 //if (FertilityData.find().count() === 0) {
-	FertilityData.drop({})
+	FertilityData.remove({})
 	/*FertilityData.insert({ region : 'II', province : 'Isabela', 	municipality : 'Cabagan', district : 'Martas Village, Catabayungan', coords : [17.4352779388, 121.7677764893], N : '0.10', P : '33.52', K : '0.25' })
 	FertilityData.insert({ region : 'III', province : 'Nueva Ecija', 	municipality : 'Muñoz', district : 'Central Luzon State University', coords : [15.7356, 120.9368], N : 11.37, P : 0.68, K : 0.09 })
 	FertilityData.insert({ region : 'IV-A', province : 'Laguna', 	municipality : 'Los Baños', district : 'University of the Philippines-Los Banos, Pili Drive', coords : [14.1723, 121.2302], N : 0.10, P : 28.39, K : 2.25 })
