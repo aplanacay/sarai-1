@@ -10,11 +10,11 @@
 		region: "Negros Island Region (NIR)",
 		province: ["All", "Negros Occidental","Negros Oriental"]
 	});
-	Regions.insert({
-		id: 3,
-		region: "National Capital Region (NCR)",
-		province: ["All", "Metropolitan Manila"]
-	});
+	// Regions.insert({
+	// 	id: 3,
+	// 	region: "National Capital Region (NCR)",
+	// 	province: ["All", "Metropolitan Manila"]
+	// });
 	Regions.insert({
 		id: 4,
 		region: "Cordillera Administrative Region (CAR)",

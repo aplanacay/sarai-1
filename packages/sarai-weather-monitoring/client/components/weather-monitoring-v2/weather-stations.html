@@ -1,0 +1,12 @@
+<template name="WeatherStations">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col" >
+      <h4>SARAI Weather Stations</h4>
+    </div>
+    {{#each station in stations}}
+      <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--6-col-phone">
+        <b>{{station.id}}</b> - {{station.label}}
+      </div>
+    {{/each}}
+  </div>
+</template>

@@ -25,26 +25,31 @@ Package.onUse(function(api) {
   api.imply(packages)
 
   var client = [
-    //old weather monitoring
-    // "client/components/weather-monitoring/weather-monitoring.html",
-    // "client/components/weather-monitoring/weather-monitoring.js",
-    // "client/components/weather-monitoring/weather-monitoring.less",
-
-    // "client/components/weather-monitoring/route.js",
-
-    //sample data
-    // "client/components/weather-monitoring/sample-data.js",
-
-    //weather monitoring v2
+    // weather monitoring v2
     "client/components/weather-monitoring-v2/weather-monitoring-v2.html",
     "client/components/weather-monitoring-v2/weather-monitoring-v2.js",
     "client/components/weather-monitoring-v2/weather-monitoring-v2.less",
 
+    // temperature heatmap
+    "client/components/weather-monitoring-v2/temperature-heatmap.html",
+    "client/components/weather-monitoring-v2/temperature-heatmap.js",
+
+    // rain heatmap
+    "client/components/weather-monitoring-v2/rain-heatmap.html",
+    "client/components/weather-monitoring-v2/rain-heatmap.js",
+
+    // weather stations
+    "client/components/weather-monitoring-v2/weather-stations.html",
+    "client/components/weather-monitoring-v2/weather-stations.js",
+
+    // route
     "client/components/weather-monitoring-v2/route.js",
 
+    // helpers
     "lib/chart-helpers.js",
     "lib/accumulated-rain-helpers.js",
-    "lib/year-chart-helpers.js"
+    "lib/year-chart-helpers.js",
+    "lib/sample-data.js"
   ]
 
   api.addFiles(client, "client")

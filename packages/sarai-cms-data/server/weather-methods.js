@@ -43,6 +43,19 @@ Meteor.methods({
     )
   },
 
+  'cms-weather-station-edit': (id, label, lat, long) => {
+    WeatherStations.update(
+      { id },
+      {
+        $set: {
+          label: label,
+          coords: [lat, long]
+        }
+      },
+      { upsert: false }
+    )
+  },
+
   'cms-weather-wu-key-edit': (key) => {
     DSSSettings.update(
       { name: 'wunderground-api-key'},

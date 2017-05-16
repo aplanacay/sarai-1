@@ -61,18 +61,23 @@
       <div class="mdl-grid">
         <!-- ===== LABEL ===== -->
 
-        <div class="mdl-cell mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="cms-ws-label">
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="cms-ws-id" style="display: none;">
+          <input class="mdl-textfield__input" type="text" pattern="[a-z,A-Z,0-9,-,\s]*" id="cms-ws-id-input">
+          <label class="mdl-textfield__label" for="cms-wd-temp-ave-input">Station ID</label>
+        </div>
+
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="cms-ws-label">
           <input class="mdl-textfield__input" type="text" pattern="[a-z,A-Z,0-9,-,\s]*" id="cms-ws-label-input">
           <label class="mdl-textfield__label" for="cms-wd-temp-ave-input">Label</label>
         </div>
 
-        <div class="mdl-cell mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="cms-ws-lat">
-          <input class="mdl-textfield__input" type="number" id="cms-ws-lat-input">
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="cms-ws-lat">
+          <input class="mdl-textfield__input" type="text" pattern="[0-9]+(.[0-9]+)*" id="cms-ws-lat-input">
           <label class="mdl-textfield__label" for="cms-wd-temp-ave-input">Lat</label>
         </div>
 
-        <div class="mdl-cell mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="cms-ws-long">
-          <input class="mdl-textfield__input" type="number" id="cms-ws-long-input">
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="cms-ws-long">
+          <input class="mdl-textfield__input" type="text" pattern="[0-9]+(.[0-9]+)*" id="cms-ws-long-input">
           <label class="mdl-textfield__label" for="cms-wd-temp-ave-input">Long</label>
         </div>
 

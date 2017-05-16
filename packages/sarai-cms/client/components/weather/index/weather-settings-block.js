@@ -10,6 +10,9 @@ Template.WeatherSettingsBlock.helpers({
   wundergroundKey: () => {
     const record = DSSSettings.findOne({name: 'wunderground-api-key'})
 
+    if (record && record.value) {
+      $('#cms-weather-wu-key').addClass("is-dirty")
+    }
     return record && record.value
   }
 })

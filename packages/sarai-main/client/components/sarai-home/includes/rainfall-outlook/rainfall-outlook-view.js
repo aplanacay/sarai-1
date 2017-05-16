@@ -46,6 +46,12 @@ Template.RainfallOutlookView.events({
     const municipality = e.currentTarget.value
     Session.set('municipality', municipality)
   },
+
+  'click .rainfall-outlook-more button': () => {
+    // const stationID = Session.get('stationID')
+    // FlowRouter.go(`/accumulated-rainfall/${stationID}`)
+    FlowRouter.go(`/heat-map-rainfall-outlook`)
+  }
 })
 
 Template.RainfallOutlookView.helpers({
@@ -74,10 +80,10 @@ Template.RainfallOutlookView.helpers({
         //   value: Math.round(weatherOutlook.data.month.March)
         // })
 
-        outlook.push({
-          head: 'April',
-          value: Math.round(weatherOutlook.data.month.April)
-        })
+        // outlook.push({
+        //   head: 'April',
+        //   value: Math.round(weatherOutlook.data.month.April)
+        // })
 
         outlook.push({
           head: 'May',
@@ -97,6 +103,11 @@ Template.RainfallOutlookView.helpers({
         outlook.push({
           head: 'Aug',
           value: Math.round(weatherOutlook.data.month.Aug)
+        })
+
+        outlook.push({
+          head: 'Sept',
+          value: Math.round(weatherOutlook.data.month.Sept)
         })
 
         return outlook

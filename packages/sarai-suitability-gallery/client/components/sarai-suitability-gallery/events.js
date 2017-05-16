@@ -1,7 +1,7 @@
 Template.SaraiSuitabilityGallery.events({
     'click .filter-button' : function (e){
         var value = e.target.attributes[1].nodeValue;
-        console.log(e);
+        // console.log(e);
         // console.log(e.target.attributes[1].nodeValue);
         // console.log(e.target.attributes[1]);
         // console.log("VALUE: "+value);
@@ -45,7 +45,7 @@ Template.SaraiSuitabilityGallery.events({
      },
 
      'click .download-button' : function (e){
-        console.log(e.target.href)
+        // console.log(e.target.href)
         e.target.href = Session.get("src")
         
      },

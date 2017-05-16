@@ -2,6 +2,11 @@
 
   <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--3-col-desktop">
+      <select class="form-control" id="monitoring-station-select">
+        <!-- {{#each station in stations}}
+          <option value="{{station.id}}">{{station.label}}</option>
+        {{/each}} -->
+      </select>
       <div id="weather-map-v2"></div>
     </div>
     <div class="mdl-cell mdl-cell--9-col-desktop">
@@ -30,31 +35,20 @@
     </div>
 
     <div class="mdl-cell mdl-cell--12-col-desktop">
-      <h3>Accumulated Rainfall</h3>
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Station</th>
-              <th>Past 10 days (mm)</th>
-              <th>Past 30 days (mm)</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each station in stations}}
-              <tr>
-                <td>{{station.id}}</td>
-                <td>{{station.rainfall10}}</td>
-                <td>{{station.rainfall30}}</td>
-              </tr>
-            {{/each}}
-          </tbody>
-        </table>
-      </div>
+      <hr>
     </div>
 
-    <div class="mdl-cell mdl-cell--12-col-desktop year-meteogram">
-
+    <div class="mdl-cell mdl-cell--12-col-desktop">
+      {{> TemperatureHeatmap }}
     </div>
+
+    <div class="mdl-cell mdl-cell--12-col-desktop">
+      {{> RainHeatmap }}
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col-desktop">
+      {{> WeatherStations }}
+    </div>
+
   </div>
 </template>

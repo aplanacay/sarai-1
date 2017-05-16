@@ -34,15 +34,20 @@ const initWeatherStationDialog = (dialogID) => {
   })
 
   dialog.querySelector('.save').addEventListener('click', () => {
-    const label = $('#cms-ws-label-input').val()
 
-    // Meteor.call('cms-weather-station-edit', label, (error, result) => {
-    //   let toast = 'Saved changes to weather station'
-    //   if (error) {
-    //     toast = 'Unable to save changes'
-    //   }
-    //   showToast(toast)
-    // })
-    // dialog.close()
+    const label = $('#cms-ws-label-input').val()
+    const lat = parseFloat($('#cms-ws-lat-input').val())
+    const long = parseFloat($('#cms-ws-long-input').val())
+    const stationID = Session.get('weather-station-id')
+
+    Meteor.call('cms-weather-station-edit', stationID, label, lat, long, (error, result) => {
+      let toast = 'Saved changes to weather station'
+      if (error) {
+        toast = 'Unable to save changes'
+      }
+      showToast(toast)
+    })
+
+    dialog.close()
   })
 }
