@@ -5,7 +5,7 @@
 	    </div>
 	    <div class="mdl-cell mdl-cell--9-col-desktop">
 	      <div class="btn-group btn-group-justified" role="group" aria-label="...">
-	        <div id="forecast" class="btn-group" role="group">
+	        <div id="fertility" class="btn-group" role="group">
 	          <button type="button" class="btn btn-default">
 	            Soil Fertility Status
 	          </button>
@@ -26,13 +26,13 @@
 	              <th>Site</th>
 	              <th>N (ppm)</th>
 	              <th>P (cmol)</th>
-	              <th>K</th>
+	              <th>K (%)</th>
 	            </tr>
 	          </thead>
 	          <tbody>
 	            {{#each site in sites}}
 	              <tr>
-	                <td>{{site.district}}</td>
+	                <td>{{site.district}}, {{site.province}}</td>
 	                <td>{{site.N}}</td>
 	                <td>{{site.P}}</td>
 	                <td>{{site.K}}</td>
@@ -47,27 +47,4 @@
 
 	    </div>
     </div>	
-
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
 </template>
