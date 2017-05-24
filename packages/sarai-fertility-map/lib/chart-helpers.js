@@ -1,149 +1,44 @@
-Meteor.chartHelpers = {
-    getpH: (data) => {
+Meteor.chartHelpers = {    
+    getData : (data) => {
+      let years = [] 
+      let treatments = []
+      let inputData = []
       
-      return result.pH
-    },
+      byYear = _.groupBy(data, function(d){return d.Year})      
+      for(let key in byYear){
+        years.push(key)        
+        // console.log('year')  
+        bySeason = _.groupBy(byYear[key], function(d){return d.Season})
+        for(let key2 in bySeason){          
+          // console.log('variety')
+          byVariety = _.groupBy(bySeason[key2], function(d){return d.Variety})
+          for(let key3 in byVariety){
+            // console.log('treatment')
 
-    getPlotLines : (ticks) => {
-      let plotLines = []
-
-      ticks.forEach((element, index) => {
-        plotLines.push({
-          color: '#bfbfbf',
-          width: 1,
-          value: element
-        })
-      })
-
-      return plotLines
-    },
-
-    featureURI: (features) => {
-      let result = ''
-
-      features.forEach((element, index) => {
-        result += '/'
-        result += element
-      })
-
-      return result
-    },
-
-    getDailySeries: (data) => {
-      let qpf = []
-      let hlTemp = []
-
-      for (let entry of data.forecast.simpleforecast.forecastday) {
-        qpf.push(entry.qpf_allday.mm)
-        hlTemp.push([entry.low.celsius, entry.high.celsius])
+            byTreatment = _.groupBy(byVariety[key3], function(d){return d.Treatment})
+            for(let key4 in byTreatment){
+              // console.log('replication')
+              // console.log(key4)
+              if (treatments.includes(key4)){} 
+              else{
+                treatments.push(key4)
+              }             
+              byReplication = _.groupBy(byTreatment[key4], function(d){return d.Replication})
+              inputData[key][key2][key3][key4] = byReplication
+              // console.log(byReplication)
+            }
+          }
+        }      
       }
-
-      const dailySeries = {
-        qpf,
-        hlTemp
-      }
-
-      return dailySeries
-    },
-
-    getHourlySeries: (data) => {
-      let temp = []
-      let pop = []
-      let windSpd = []
-
-      const forecast = data.hourly_forecast
-
-
-      for (let entry of forecast) {
-
-        const ftc = entry.FCTTIME;
-        const utcDate = Date.UTC(ftc.year, ftc.mon-1, ftc.mday, ftc.hour);
-
-        temp.push([utcDate, parseInt(entry.temp.metric)])
-        pop.push([utcDate, parseInt(entry.pop)])
-        windSpd.push([utcDate, parseInt(entry.wspd.metric)])
-      }
+      //console.log(byReplication)
+      //console.log(treatments)
 
       const result = {
-        temp,
-        pop,
-        windSpd
+        years,
+        treatments
       }
 
       return result
-    },
-
-    getTickPositions: (data) => {
-      const df = data.forecast.simpleforecast.forecastday
-
-      const tickPositions = [];
-      let year = 0;
-      let month = 0;
-      let day = 0;
-
-      for (let entry of df) {
-        const date = entry.date;
-        year = date.year;
-        month = date.month - 1;
-        day = date.day;
-
-        tickPositions.push(Date.UTC(year, month, day, 0))
-      }
-
-      const nextDay = day < 31 ? day + 1 : 1
-      tickPositions.push(Date.UTC(year, month, nextDay, 0));
-
-      return tickPositions;
-    },
-
-    getAltTickPositions: (data) => {
-      const df = data.forecast.simpleforecast.forecastday
-      const altTickPositions = [];
-      let year = 0;
-      let month = 0;
-      let day = 0;
-
-      for (let entry of df) {
-        const date = entry.date;
-        year = date.year;
-        month = date.month - 1;
-        day = date.day;
-
-        altTickPositions.push(Date.UTC(year, month, day, 12))
-      }
-
-      const nextDay = day < 31 ? day + 1 : 1
-      altTickPositions.push(Date.UTC(year, month, nextDay, 12));
-
-      return altTickPositions;
-    },
-
-    getRainAltTickPositions: (data) => {
-      const rainAltTickPositions = []
-
-      for (let entry of data.forecast.simpleforecast.forecastday) {
-        // rainAltTickPositions.push()
-      }
-    },
-
-    getTickQPFMap: (ticks, qpf) => {
-      let tickQPFMap = {}
-
-      for (let a = 0; a < ticks.length - 1; a++) {
-        tickQPFMap[ticks[a]] = qpf[a] + ' mm'
-      }
-
-      return tickQPFMap
-    },
-
-    getTickTempMap: (ticks, temp) => {
-      let tickTempMap = {}
-
-      for (let a = 0; a < ticks.length - 1; a++) {
-        tickTempMap[ticks[a]] = '<span style="color: #0853a8;">' + temp[a][0] + '°</span> | <span style="color: #ea7c0e;">' + temp[a][1] + '°</span>'
-      }
-
-      return tickTempMap
     },
 
     constructChart: (chart) => {
@@ -168,12 +63,12 @@ Meteor.chartHelpers = {
 
         xAxis: [
           {
-
+            categories: chart.categories,
             crosshair: true,
             //tickPositions: chart.tickPositions,
             //tickPosition: 'inside',
             // opposite: true,
-            events: {
+            /*events: {
               setExtremes: function syncExtremes(e) {
                 var thisChart = this.chart
                 if (e.trigger !== 'syncExtremes') { // Prevent feedback loop
@@ -186,7 +81,7 @@ Meteor.chartHelpers = {
                   });
                 }
               }
-            },
+            },*/
             labels: {
               enabled: false
             },
@@ -224,16 +119,61 @@ Meteor.chartHelpers = {
           },
         },
 
-        series: [{
+        /*series: [{
           name: chart.name,
           id: chart.id,
           data: chart.data,
-          type: 'spline',
+          type: 'column',
           //color: chart.color,
           tooltip: {
               valueDecimals: 0
           }
-        }],
+        }],*/
+
+        /*series: [{
+            type: 'column',
+            name: 'Jane',
+            data: [3, 2, 1, 3, 4]
+        }, {
+            type: 'column',
+            name: 'John',
+            data: [2, 3, 5, 7, 6]
+        }, {
+            type: 'column',
+            name: 'Joe',
+            data: [4, 3, 3, 9, 0]
+        }, {
+            type: 'spline',
+            name: 'Average',
+            data: [3, 2.67, 3, 6.33, 3.33],
+            marker: {
+                lineWidth: 2,
+                lineColor: Highcharts.getOptions().colors[3],
+                fillColor: 'white'
+            }
+        }, {
+            type: 'pie',
+            name: 'Total consumption',
+            data: [{
+                name: 'Jane',
+                y: 13,
+                color: Highcharts.getOptions().colors[0] // Jane's color
+            }, {
+                name: 'John',
+                y: 23,
+                color: Highcharts.getOptions().colors[1] // John's color
+            }, {
+                name: 'Joe',
+                y: 19,
+                color: Highcharts.getOptions().colors[2] // Joe's color
+            }],
+            center: [100, 80],
+            size: 100,
+            showInLegend: false,
+            dataLabels: {
+                enabled: false
+            }
+        }],*/
 
         tooltip: {
           formatter: function () {

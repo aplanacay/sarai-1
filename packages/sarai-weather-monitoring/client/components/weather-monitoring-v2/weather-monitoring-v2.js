@@ -208,7 +208,7 @@ const displayForecast = (stationID, apiKey) => {
     const dataFeatures = [ 'conditions', 'hourly10day', 'forecast10day']
 
     $.getJSON(`http:\/\/api.wunderground.com/api/${apiKey}${Meteor.chartHelpers.featureURI(dataFeatures)}/q/pws:${stationID}.json`, (result) => {
-
+      console.log(result)
       const dailySeries = Meteor.chartHelpers.getDailySeries(result)
       const hourlySeries = Meteor.chartHelpers.getHourlySeries(result)
       //common data

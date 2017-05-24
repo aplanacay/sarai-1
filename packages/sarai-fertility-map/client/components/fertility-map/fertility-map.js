@@ -100,7 +100,7 @@ const displayFertilityData = (stationID) => {
   //Display temporary spinner
   $('<div class="meteogram meteogram-stub"><div class="mdl-spinner mdl-js-spinner is-active"></div></div>').appendTo('#meteogram-container')
 
-  if (this.visibleChart == 'fertility') {
+  if (this.visibleChart == 'fertility') {    
     displayFertility(stationID)
   }/* else if (this.visibleChart == 'accumulated') {
     displayAccumulatedRain(stationID, apiKey)
@@ -111,20 +111,13 @@ const displayFertilityData = (stationID) => {
 
 const displayFertility = (stationID) => {
   /*const dataFeatures = [ 'conditions', 'hourly10day', 'forecast10day']*/
-  console.log('test')
+  console.log('displayFertility')
 
-  $.getJSON(`lib/ph-fertility.json`, (result) => {
-/*
-    //common data
-    const tickPositions = Meteor.chartHelpers.getTickPositions(result)
-    const altTickPositions = Meteor.chartHelpers.getAltTickPositions(result)
+  $.getJSON(`https:\/\/jsonblob.com/api/jsonBlob/a99940df-3d3a-11e7-ae4c-0321747f7428`, (result) => {
 
-    const plotLines = Meteor.chartHelpers.getPlotLines(tickPositions)
+    let group = _.groupBy(result, function(d){return d.Region})  
 
-    const tickQPFMap = Meteor.chartHelpers.getTickQPFMap(altTickPositions, dailySeries.qpf)
-    const tickTempMap = Meteor.chartHelpers.getTickTempMap(altTickPositions, dailySeries.hlTemp)
-*/
-    const ph = Meteor.chartHelpers.getpH(result)
+    chartInput = Meteor.chartHelpers.getData(group[stationID])    
 
     const charts = [
       {
@@ -132,8 +125,9 @@ const displayFertility = (stationID) => {
         title: 'Fertility Data',
         name: 'Fertility',
         id: 'fertility',
-        //data: result.pH,
-        /*unit: '°C',
+        categories: chartInput.years,
+        /*//data: result.pH,
+        unit: '°C',
         tickPositions: tickPositions,
         altTickPositions: altTickPositions,
         color: '#ff8c1a',
@@ -141,9 +135,7 @@ const displayFertility = (stationID) => {
         plotLines,
         altTickLabels: tickTempMap,*/
       },  
-    ]
-
-    console.log('test2')
+    ]   
 
     //remove any existing charts first
     $('div.meteogram').remove()

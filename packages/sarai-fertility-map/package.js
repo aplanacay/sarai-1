@@ -31,7 +31,8 @@ Package.onUse(function(api) {
 
     "client/components/fertility-map/route.js",
 
-    "lib/chart-helpers.js"
+    "lib/chart-helpers.js",
+    //"lib/ph-fertility.js",
     /*"lib/highmapsHelper.html",
     "lib/highmapsHelper.js",
     "lib/ph-all.js"*/
