@@ -92,7 +92,7 @@ Template.FertilityMap.helpers({
 })
 
 const displayFertilityData = (stationID) => {
-  console.log('Displaying fertility data from region ' + stationID)
+  //console.log('Displaying fertility data from region ' + stationID)
 
   //Remove any existing chart
   $('div.meteogram').remove()
@@ -110,31 +110,33 @@ const displayFertilityData = (stationID) => {
 }
 
 const displayFertility = (stationID) => {
-  /*const dataFeatures = [ 'conditions', 'hourly10day', 'forecast10day']*/
-  console.log('displayFertility')
+  /*const dataFeatures = [ 'conditions', 'hourly10day', 'forecast10day']*/  
 
   $.getJSON(`https:\/\/jsonblob.com/api/jsonBlob/a99940df-3d3a-11e7-ae4c-0321747f7428`, (result) => {
 
     let group = _.groupBy(result, function(d){return d.Region})  
 
-    chartInput = Meteor.chartHelpers.getData(group[stationID])    
+    wSchartInput = Meteor.chartHelpers.getData(group[stationID], 'WS')    
+    dSchartInput = Meteor.chartHelpers.getData(group[stationID], 'DS')    
 
     const charts = [
       {
         element: '#fertility-meteogram',
-        title: 'Fertility Data',
+        title: 'Wet Season',
         name: 'Fertility',
         id: 'fertility',
-        categories: chartInput.years,
-        /*//data: result.pH,
-        unit: '°C',
-        tickPositions: tickPositions,
-        altTickPositions: altTickPositions,
-        color: '#ff8c1a',
-        dateTicksEnabled: true,
-        plotLines,
-        altTickLabels: tickTempMap,*/
+        categories: wSchartInput.years,
+        data: wSchartInput.series,        
       },  
+      {
+        element: '#fertility-meteogram',
+        title: 'Dry Season',
+        name: 'Fertility',
+        id: 'fertility',
+        categories: dSchartInput.years,
+        data: dSchartInput.series,        
+      },
+
     ]   
 
     //remove any existing charts first

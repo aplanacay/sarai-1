@@ -13,7 +13,7 @@ Meteor.chartHelpers = {
       return plotLines
     },
 
-    featureURI: (features) => {
+    featureURI : (features) => {
       let result = ''
 
       features.forEach((element, index) => {
